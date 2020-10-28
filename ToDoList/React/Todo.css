@@ -1,0 +1,25 @@
+.title {
+  padding: 10px;
+  margin-left: 5px;
+}
+
+.input {
+  background-color: rgb(219, 177, 217);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  width: 300px;
+  margin: 10px;
+}
+
+.button {
+  padding-left: 640px;
+  margin-left: 20px;
+  width: 10px;
+}
+
+.button:focus,
+.input:focus {
+  outline: none;
+}
