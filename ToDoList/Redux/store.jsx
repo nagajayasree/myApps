@@ -1,21 +1,24 @@
 import { createStore } from "redux";
 
 const initialState = {
-  items: [{ id: 1, text: "play tennis" }],
-  // input: "hello",
+  items: [
+    { id: "123", text: "go to market" },
+    { id: "234", text: "finish work" },
+  ],
 };
 
 //reducer
 function todoList(state = initialState, action) {
   switch (action.type) {
-    case "ADD_ITEM":
-      return [
-        ...state.items,
-        {
-          id: Math.random(),
-          text: action.text,
-        },
-      ];
+    case "ADD_ITEM": {
+      const { id, text } = action.payload;
+      return {
+        ...state,
+        id: Math.random(),
+        text: action.text,
+        items: [...state.items, id, text],
+      };
+    }
     case "DELETE_ITEM":
       return state.items.map((item) =>
         item.id === action.id ? { ...item, id: !item.id } : item
@@ -29,13 +32,16 @@ function todoList(state = initialState, action) {
 export const store = createStore(todoList);
 
 //actions
-export const addItem = (id, text) => ({
+export const addItem = (text) => ({
   type: "ADD_ITEM",
-  id,
-  text,
+  payload: {
+    text,
+  },
 });
 
-export const deleteItem = (id) => ({
+export const delItem = (id) => ({
   type: "DELETE_ITEM",
-  id,
+  payload: {
+    id,
+  },
 });
