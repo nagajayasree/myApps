@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteItem } from "./store";
+import { delItem } from "./store";
 
 const TodoItems = ({ items }) => {
   return (
@@ -8,7 +8,7 @@ const TodoItems = ({ items }) => {
         {items.map((item) => (
           <button
             className="btn btn-danger m-3"
-            onClick={() => deleteItem(item.id)}
+            onClick={() => delItem(item.id)}
           >
             Delete
           </button>
