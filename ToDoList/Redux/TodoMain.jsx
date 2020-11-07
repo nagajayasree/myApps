@@ -1,5 +1,5 @@
 import React from "react";
-import TodoRedux from "./TodoRedux";
+import ReduxTodo from "./ReduxTodo";
 import { Provider } from "react-redux";
 import { store } from "./store";
 
@@ -7,7 +7,7 @@ function TodoMain() {
   return (
     <div>
       <Provider store={store}>
-        <TodoRedux />
+        <ReduxTodo />
       </Provider>
     </div>
   );
